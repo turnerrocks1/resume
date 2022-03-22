@@ -1,0 +1,148 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Disable Colors
+\hypersetup{
+	colorlinks=false,
+	pdfborder={0 0 0},
+}
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item[$\circ$]\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItems}[2]{
+	\item[$\circ$]\small{
+		\textbf{#1}{ #2 \vspace{-7pt}}
+	}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item[]
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[ leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Large Terrance Turner} & Email : \href{mailto:bigsean123@icloud.com}{bigsean123@icloud.com}\\
+  \href{https://twitter.com/turnerhackz1}{https://twitter.com/turnerhackz1} & Mobile : 334-500-2732 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Enterprise State Community College}{Enterprise, Alabama}
+      {Aviation Engineering}{}
+  \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Wallace Community College}{Dothan, Alabama}
+      {Associate of Applied Science Majoring in Computer Information Science}{}
+  \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------------
+\section{Skills}
+  \resumeSubHeadingListStart
+    \item[]{
+      \textbf{Languages}{: C, C++, Aarch64 Assembly, Objective-C, Python, Javascript, & Html.}\\
+      \textbf{Tools}{: lldb & gdb, Reversing tools such as ida pro, ghidra, radare, and hopper.}\\
+      \textbf{Areas of Experties}{: Source code vulnerability research, & Reverse engineering & debugging.}
+    }
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{WebKit Exploitation}\\
+      
+      {
+      WebKit as of the current moment have heavy mitagations in place. Such as Address Space Layer Randomization (which is defeated using r/w primitives through type confusion as an infoleak), StructureID randomization (again defeated through r/w type confusion), JITStructureIDCaching (defeated by performing a side effect to clear it) Gigacage which cages backing stores of arbitrary pointers to prevent arbitrary r/w (can be defeated by fully disabling gigacage with private techniques or 0'days I chose to bypass/"workaround" it instead by using JSArrays which provide a semi arbitrary r/w since it's not gigacaged), PAC which is the newest mitagation since armv8.3 chips (figuratively speaking I haven't defeated this in any way but instead chose public means of bypassing it), JIT Page Read Only Mitagation (defeated by simply performing ROP or JOP, or abusing JIT functions that will make the mapping temporarily rwx from a buffer.) (side not the link which is my exploit works only on MacOS and linux and any other OS that utilizes WebKit as OSes that are computers usually have JIT page mapped as rwx! But on the PS4 and iOS the page is r-x so ROP is needed which i didn't include to avoid abuse by bad hackers.) }
+      \href{}{
+        iOS 14-14.7beta1 Exploit : https://github.com/turnerrocks1/turnerrocks1.github.io/blob/main/
+        Live test site: https://turnerrocks1.github.io/}\\
+  \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubItem{OS Kernel hacking}\\
+      {As far as finding CVE's or releasing exploits for other OSes I have none but I have dealt with code reviewing Free/Open BSD kernels (Which is also what the PS3,PS4, and I believd the PS5 also uses), The linux Kernel, The XNU kernel of macOS/iOS kernel but open source and closed source (as IOKit and it's subdrivers are mostly closed source which requires reverse engineering), and reversing the dyld shared cache!}
+  \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubItem{Jail-breaking iOS/MacOS}\\
+      {Refer to above heading "WebKit Exploitation" as iOS and MacOS Safari has webkit as it's core engine.}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+    {{Allied Motion}}{Dothan, Alabama}
+      {Data Entry}{April 2021 - January 2022}
+      \resumeItemListStart
+        \resumeItem{Utilizing Word Document and Excel}
+          {Using word Document and Excel to input Data such as sells, shipments, behind scheduled orders, how many orders for said items etc.}
+        \resumeItem{Troubleshooting printer and network problems}
+          {Having to figure out network errors or figuring out how to get it back online, fixing paper jams, fixing printer and clearing its caches from time to time.}
+          \resumeItem{Printing Paperwork for motor deliveries}
+          {using the printer to print estimated deliveries and build instructions for other employees}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\end{document}
